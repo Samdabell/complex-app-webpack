@@ -3,3 +3,5 @@ var Review = function(options){
   this.rating = options.rating;
   this.author = options.author;
 }
+
+module.exports = Review;

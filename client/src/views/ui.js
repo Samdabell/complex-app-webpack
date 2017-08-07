@@ -1,3 +1,5 @@
+var Films = require("../models/films.js")
+
 var UI = function(){
   var films = new Films();
   this.render(films);
@@ -27,6 +29,7 @@ UI.prototype = {
     for(var film of films) {
       var li = document.createElement("li");
       this.appendText(li, film.title, "Film: ");
+      this.appendText(li, film.genre, "Genre: ");
       
       for(var review of film.reviews){
         this.createReview(li, review);
@@ -35,3 +38,5 @@ UI.prototype = {
     }
   }
 }
+
+module.exports = UI;
